@@ -22,12 +22,14 @@
     "clean": "ets clean"
   },
   "dependencies": {
+    "ajv": "^8.11.0",
     "dayjs": "^1.11.2",
     "egg": "^2.6.1",
     "egg-cors": "^2.2.3",
     "egg-jwt": "^3.1.7",
     "egg-scripts": "^2.6.0",
     "egg-sequelize": "^6.0.0",
+    "mkdirp": "^1.0.4",
     "mysql2": "^2.3.3"
   },
   "devDependencies": {

@@ -10,9 +10,9 @@ module.exports = (app: Application) => {
       autoIncrement: true,
     },
     pay_type: {
-      type: DataTypes.BOOLEAN,
+      type: DataTypes.DECIMAL,
       allowNull: true,
-      comment: 'true为收入,false为支出',
+      comment: '1 收入,2 支出',
     },
     amount: {
       type: DataTypes.INTEGER,

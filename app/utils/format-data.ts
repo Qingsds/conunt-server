@@ -3,6 +3,8 @@
  * @author qingsds
  */
 
+import { DEFAULT_PIC, DEFAULT_SIG } from '../contents'
+
 const dayjs = require('dayjs')
 
 /**
@@ -16,13 +18,13 @@ export const formatTime = (date: string) => {
 
 function _formatUser(data: any) {
   if (!data.avatar) {
-    data.avatar =
-      'http://s.yezgea02.com/1615973940679/WeChat77d6d2ac093e247c361f0b8a7aeb6c2a.png'
+    data.avatar = DEFAULT_PIC
   }
   if (!data.signature) {
-    data.signature = '这个人什么都没说...'
+    data.signature = DEFAULT_SIG
   }
   data.createAt = formatTime(data.createAt)
+  return data
 }
 
 /**
