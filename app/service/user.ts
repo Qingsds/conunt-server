@@ -15,10 +15,10 @@ class UserService extends Service {
     const { ctx } = this
     // 查询参数
     const whereOpt: { username: string; password?: string } = { username }
-
     if (password) {
       whereOpt.password = password
     }
+    // 查询操作
     const userInfo = await ctx.model.User.findOne({
       where: whereOpt,
     })

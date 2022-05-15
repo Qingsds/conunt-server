@@ -32,7 +32,9 @@ class UploadController extends Controller {
       ctx.cleanupRequestFiles()
     }
 
-    ctx.body = new resModel.SuccessModel({})
+    ctx.body = new resModel.SuccessModel({
+      img: uploadDir.replace('/app/g', ''),
+    })
   }
 }
 

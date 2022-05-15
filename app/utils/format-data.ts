@@ -13,7 +13,7 @@ const dayjs = require('dayjs')
  * @returns 格式化后的时间
  */
 export const formatTime = (date: string) => {
-  return dayjs(new Date(date)).format('YYYY-MM-DD HH:mm:ss')
+  return dayjs(new Date(date)).format('YYYY-MM-DD')
 }
 
 function _formatUser(data: any) {

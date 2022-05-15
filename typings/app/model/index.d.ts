@@ -2,9 +2,9 @@
 // Do not modify this file!!!!!!!!!
 
 import 'egg';
-import ExportBill from '../../../app/model/bill';
-import ExportType from '../../../app/model/type';
-import ExportUser from '../../../app/model/user';
+import ExportBill = require('../../../app/model/bill');
+import ExportType = require('../../../app/model/type');
+import ExportUser = require('../../../app/model/user');
 
 declare module 'egg' {
   interface IModel {
