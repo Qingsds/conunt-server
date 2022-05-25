@@ -14,7 +14,6 @@ export default (appInfo: EggAppInfo) => {
   const bizConfig = {
     sourceUrl: `https://github.com/eggjs/examples/tree/master/${appInfo.name}`,
   }
-
   // 安全相关
   config.security = {
     csrf: {
@@ -23,6 +22,17 @@ export default (appInfo: EggAppInfo) => {
     },
     domainWhiteList: ['*'], //白名单
   }
+
+  config.cors = {
+    origin: '*', // 允许所有跨域访问
+    credentials: true, // 允许 Cookie 跨域跨域
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH',
+  }
+  // 文件上传
+  config.multipart = {
+    mode: 'file',
+  }
+  config.uploadDir = 'app/public/upload'
 
   // 数据库
   config.sequelize = {

@@ -1,6 +1,4 @@
-import { Application } from 'egg'
-
-module.exports = (app: Application) => {
+module.exports = app => {
   const { DataTypes } = app.Sequelize
 
   const Bill = app.model.define('bill', {
@@ -10,12 +8,12 @@ module.exports = (app: Application) => {
       autoIncrement: true,
     },
     pay_type: {
-      type: DataTypes.BOOLEAN,
+      type: DataTypes.DECIMAL,
       allowNull: true,
-      comment: 'true为收入,false为支出',
+      comment: '1为支出, 2为收入',
     },
     amount: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       comment: '消费金额(账单)',
     },
     date: {
@@ -37,6 +35,9 @@ module.exports = (app: Application) => {
       type: DataTypes.STRING,
     },
   })
-
+  Bill.associate = function () {
+    Bill.belongsTo(app.model.User, { foreignKey: 'user_id' })
+    Bill.belongsTo(app.model.Type, { foreignKey: 'type_id' })
+  }
   return Bill
 }

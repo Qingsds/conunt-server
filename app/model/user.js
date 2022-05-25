@@ -1,6 +1,4 @@
-import { Application } from 'egg'
-
-module.exports = (app: Application) => {
+module.exports = app => {
   const { DataTypes } = app.Sequelize
 
   const User = app.model.define('user', {
@@ -32,6 +30,9 @@ module.exports = (app: Application) => {
       defaultValue: DataTypes.NOW,
     },
   })
+  User.associate = function () {
+    User.hasMany(app.model.Bill)
+  }
 
   return User
 }

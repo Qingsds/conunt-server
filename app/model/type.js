@@ -1,6 +1,4 @@
-import { Application } from 'egg'
-
-module.exports = (app: Application) => {
+module.exports = app => {
   const { DataTypes } = app.Sequelize
 
   const Type = app.model.define('type', {
@@ -14,9 +12,9 @@ module.exports = (app: Application) => {
       allowNull: false,
     },
     type: {
-      type: DataTypes.BOOLEAN,
+      type: DataTypes.DECIMAL,
       allowNull: true,
-      comment: 'true为收入,false为支出',
+      comment: '1为支出, 2为收入',
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -25,6 +23,10 @@ module.exports = (app: Application) => {
         '默认值 0 所有人可见 某个用户单独设置的标签,user_id 就是该用户的用户 id',
     },
   })
+
+  Type.associate = function () {
+    Type.hasMany(app.model.Bill)
+  }
 
   return Type
 }
