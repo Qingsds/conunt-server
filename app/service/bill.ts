@@ -28,8 +28,7 @@ class BillService extends Service {
       order: [['id', 'desc']],
       where: { user_id },
     })
-
-    return result.dataValues
+    return result
   }
 
   /**
@@ -58,7 +57,7 @@ class BillService extends Service {
       { where: { id, user_id } }
     )
     //返回一个数组
-    return result[0] > 0
+    return result > 0
   }
 
   /**
@@ -71,7 +70,7 @@ class BillService extends Service {
       where: { id, user_id },
     })
 
-    return result[0] > 0
+    return result > 0
   }
 }
 

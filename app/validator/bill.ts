@@ -9,10 +9,10 @@ const SCHEMA = {
   type: 'object',
   properties: {
     amount: {
-      type: 'number',
+      type: 'string',
     },
     type_id: {
-      type: 'number',
+      type: 'string',
     },
     type_name: {
       type: 'string',
@@ -21,7 +21,7 @@ const SCHEMA = {
       type: 'string',
     },
     pay_type: {
-      type: 'number',
+      type: 'string',
     },
     remark: {
       type: 'string',

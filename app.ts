@@ -1,3 +1,4 @@
+import { INIT_USER_DATA } from './app/contents/index'
 import { Application } from 'egg'
 import { INIT_TYPE_DATA } from './app/contents'
 
@@ -10,5 +11,6 @@ module.exports = (app: Application) => {
     await app.model.sync({ force: true })
     // 初始化type 表格信息
     await app.model.Type.bulkCreate(INIT_TYPE_DATA)
+    await app.model.User.create(INIT_USER_DATA)
   })
 }

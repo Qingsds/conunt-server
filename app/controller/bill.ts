@@ -51,13 +51,15 @@ class BillController extends Controller {
    */
   public async list() {
     const { ctx } = this
-    const {
+    let {
       date,
       pageIndex = 0,
       pageSize = DEFAULT_PAGE_SIZE,
       type_id = 'all',
-    } = ctx.request.body
+    } = ctx.request.query
     const id = ctx.decode.id
+    pageIndex = Number(pageIndex)
+    pageSize = Number(pageSize)
 
     let billList = await ctx.service.bill.getBillListByUserId({
       user_id: id,
@@ -182,9 +184,9 @@ class BillController extends Controller {
   public async data() {
     const { ctx } = this
     const { date = Date.now() } = ctx.query
-    const { id } = ctx.decode
+    const { id :user_id} = ctx.decode
     //拿到原始数据
-    const list = await ctx.service.bill.getBillListByUserId(id)
+    const list = await ctx.service.bill.getBillListByUserId({user_id})
     // 拿到当月的开始时间和结束时间的时间戳
     const start = dayjs(date).startOf('month').unix() * 1000
     const end = dayjs(date).endOf('month').unix() * 1000

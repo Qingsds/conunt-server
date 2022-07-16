@@ -17,7 +17,7 @@ module.exports = app => {
       comment: '消费金额(账单)',
     },
     date: {
-      type: DataTypes.DATE,
+      type: DataTypes.STRING,
       comment: '账单日期',
     },
     type_id: {
