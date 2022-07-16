@@ -28,7 +28,12 @@ class BillService extends Service {
       order: [['id', 'desc']],
       where: { user_id },
     })
+<<<<<<< HEAD
     return result
+=======
+
+    return result.dataValues
+>>>>>>> 4f3d4fccbbf7171a030b059a71987a499bfdb735
   }
 
   /**
@@ -57,7 +62,11 @@ class BillService extends Service {
       { where: { id, user_id } }
     )
     //返回一个数组
+<<<<<<< HEAD
     return result > 0
+=======
+    return result[0] > 0
+>>>>>>> 4f3d4fccbbf7171a030b059a71987a499bfdb735
   }
 
   /**
@@ -70,7 +79,11 @@ class BillService extends Service {
       where: { id, user_id },
     })
 
+<<<<<<< HEAD
     return result > 0
+=======
+    return result[0] > 0
+>>>>>>> 4f3d4fccbbf7171a030b059a71987a499bfdb735
   }
 }
 

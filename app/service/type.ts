@@ -12,8 +12,13 @@ class TypeService extends Service {
         user_id: ctx.model.or([user_id, 0]),
       },
     })
+<<<<<<< HEAD
     console.log(result)
     return result
+=======
+
+    return result.dataValues
+>>>>>>> 4f3d4fccbbf7171a030b059a71987a499bfdb735
   }
   /**
    * 添加类型

@@ -11,6 +11,9 @@ module.exports = (app: Application) => {
     await app.model.sync({ force: true })
     // 初始化type 表格信息
     await app.model.Type.bulkCreate(INIT_TYPE_DATA)
+<<<<<<< HEAD
     await app.model.User.create(INIT_USER_DATA)
+=======
+>>>>>>> 4f3d4fccbbf7171a030b059a71987a499bfdb735
   })
 }

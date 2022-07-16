@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import { doCrypto } from './../utils/bcrypt'
+=======
+>>>>>>> 4f3d4fccbbf7171a030b059a71987a499bfdb735
 export const DEFAULT_SIG = '这个人很懒,什么都没说...'
 
 export const DEFAULT_PIC =
@@ -24,6 +27,7 @@ export const INIT_TYPE_DATA = [
   { name: '退款', type: 2, user_id: 0 },
   { name: '其他', type: 2, user_id: 0 },
 ]
+<<<<<<< HEAD
 
 export const INIT_USER_DATA = 
   { username: 'qingsds', password: doCrypto('123456') }
@@ -31,3 +35,5 @@ export const INIT_USER_DATA =
 export const INIT_LIST_DATA = [
   
 ]
+=======
+>>>>>>> 4f3d4fccbbf7171a030b059a71987a499bfdb735
